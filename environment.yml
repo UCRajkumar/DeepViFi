@@ -1,0 +1,17 @@
+name: deepvifi
+channels:
+  - defaults
+  - conda-forge
+dependencies:
+  - conda
+  - python=3.7
+  - seaborn
+  - biopython
+  - tensorflow=2.3
+  - opencv
+  - pandas
+  - jupyter
+  - pip
+  - lightgbm
+  - make
+  - pyyaml

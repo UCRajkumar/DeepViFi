@@ -1,0 +1,32 @@
+create_data:
+  datapath: 'data'
+  viral_refs: 'hbv.unaligned.fas'
+  read_len : 48
+  coverage : 0.5
+  mask_rate : 0.2
+
+train_transformer:
+  datapath: 'data'
+  model_path : 'models'
+  ck_name : 'ck1'
+  embed_dim : 128
+  num_heads : 16
+  num_layers : 8
+  ff_dim : 256
+  batch_size : 256
+
+train_rf:
+  datapath: 'data'
+  model_path : 'models'
+  ck_name : 'ck1'
+  transformer_model : 'embed128_heads16_h256_fd5_nl8'
+  num_trees : 500
+
+test_pipeline:
+  datapath: 'data'
+  model_path : 'models'
+  ck_name : 'ck1'
+  transformer_model : 'Deepvifi'
+  rf_model : 'hbv_rf_detector.joblib'
+  test_file : 'easy_1.fa'
+  file_type : 'fasta'
