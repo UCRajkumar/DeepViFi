@@ -27,10 +27,10 @@ def main(argv):
         print("Input folder does not exist. Exiting...")
         sys.exit(2)
 
-    # print('Load and process test data...')
-    # reads = read_fasta(os.path.join(datapath, test_file), file_type)
-    # reads.to_csv(os.path.join(datapath, test_file.split('.')[0] +'.csv'))
-    # del reads
+    print('Load and process test data...')
+    reads = read_fasta(os.path.join(datapath, test_file), file_type)
+    reads.to_csv(os.path.join(datapath, test_file.split('.')[0] +'.csv'))
+    del reads
 
     print("Loading transformer model...")
     transformer = load_model(os.path.join(model_path, ck_name, transformer_model), compile=False)
@@ -50,6 +50,12 @@ def main(argv):
     preds_1 = np.concatenate(preds_1)   
 
     rf_preds_1 = rf.predict_proba(preds_1)[:, 1]
+
+    seqs = pd.read_csv(os.path.join(datapath, test_file.split('.')[0] +'.csv'), index_col=0)
+    seqs = seqs.drop(columns=['seqs'])
+    seqs['rf_preds'] = rf_preds_1
+    seqs.to_csv(os.path.join(datapath, test_file.split('.')[0] +'_rfpredictions.csv'))
+
     new_path = os.path.join(datapath, test_file('.')[0] + '_rfpredictions.npy')
     np.save(new_path, rf_preds_1)
 

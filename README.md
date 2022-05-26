@@ -66,4 +66,29 @@ ff_dim : Dimensions of feed forward layer in each transformer block. (recommende
 batch_size : Batch size
 ```
 
+### `make train_rf`
+Trains a random forest model given the hyperparameters. Set parameters in config.yaml under `train_rf`:
 
+```
+datapath: Path to folder containing the viral references and training data
+model_path : Path to folder where you want the model saved
+ck_name : Path to checkpoint folder containing the transformer model. If no checkpoint folder, leave as ''
+transformer_model : Name of the trained transformer model. Typically something like "embed128_heads8_h256_fd5_nl8"
+num_trees : Number of trees to be trained in the RF model. Recommended value 500
+```
+
+### `make test_pipeline`
+Read/process a test file, and run the transformer and RF on the test data. Set parameters in config.yaml under `test_pipeline`:
+
+```
+datapath: Path to folder containing the viral references and training data
+model_path : Path to folder where you want the model saved
+ck_name : Path to checkpoint folder containing the transformer model. If no checkpoint folder, leave as ''
+transformer_model : Name of the trained transformer model. Typically something like "embed128_heads8_h256_fd5_nl8"
+rf_model : Name of the trained RF model. 
+test_file : Name of the file to test
+file_type : Type of the test file. Can be 'fasta' or 'fastq'. 
+```
+
+#### Output
+`test_pipeline` produces a file called `<test_file>_rfpredictions.csv` The first column is the read IDs and the second column is the rf prediction. A value close to 1 indicates that the read is highly likely to be viral. 
