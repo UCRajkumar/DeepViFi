@@ -10,7 +10,7 @@ Rajkumar, U. et al. *DeepViFi: Detecting Novel Integrations in NGS data.* In Rev
 | ---------------- | ------------------------------------------- |
 | config.yaml      | File to set parameters for different tasks  |
 | Makefile         | Makefile to run the different scripts       |
-| requirements.txt | Requirement file for setting up environment |
+| environment.yml | Requirement file for setting up environment |
 | setup.sh         | Script to install ecSeg package             |
 
 ...
@@ -38,7 +38,7 @@ CACACATACAGACATA...
 > name_of_ref2
 ...
 
-The genomes do not need to be the same dimensions.
+The genomes do not need to be the same length.
 ```
 
 ## Tasks
