@@ -18,7 +18,7 @@ Rajkumar, U. et al. *DeepViFi: Detecting Novel Integrations in NGS data.* In Rev
 | Folder | Description                        |
 | ------ | ---------------------------------- |
 | src    | Contains python scripts            |
-| models | Contains transformer models trained on HPV and HBV references. Download the (models.zip)[https://data.mendeley.com/datasets/vrph2844sy/3] from here and and unzip the folder inside the deepvifi/ folder|
+| models | Contains transformer models trained on HPV and HBV references. Download the [https://data.mendeley.com/datasets/vrph2844sy/3](models.zip) from here and and unzip the folder inside the deepvifi/ folder|
 
 ## Installation
 
