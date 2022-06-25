@@ -1,8 +1,8 @@
-# DeepViFi: Detecting Viral Infections in NGS data
+# DeepViFi: Detecting Oncoviral Infections in Cancer Genomes using Transformers
 
 DeepViFi pipeline detects viral infections in NGS data using the Transformer architecture. It can be trained on specific viral families. 
 
-Rajkumar, U. et al. *DeepViFi: Detecting Novel Integrations in NGS data.* In Review. (2022)
+Rajkumar, U. et al. *DeepViFi: Detecting Oncoviral Infections in Cancer Genomes using Transformers.* ACM BCB. (2022)
 
 ## Directory structure
 
