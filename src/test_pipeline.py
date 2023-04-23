@@ -56,7 +56,7 @@ def main(argv):
     seqs['rf_preds'] = rf_preds_1
     seqs.to_csv(os.path.join(datapath, test_file.split('.')[0] +'_rfpredictions.csv'))
 
-    new_path = os.path.join(datapath, test_file('.')[0] + '_rfpredictions.npy')
+    new_path = os.path.join(datapath, test_file.split('.')[0] + '_rfpredictions.npy')
     np.save(new_path, rf_preds_1)
 
 if __name__ == "__main__":
