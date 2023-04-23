@@ -21,6 +21,7 @@ def main(argv):
     ck_name = var['ck_name']
     transformer_model = var['transformer_model']
     num_trees = var['num_trees']
+    read_len = var['read_len']
 
     if(os.path.isdir(os.path.join(datapath)) == False):
         print("Input folder does not exist. Exiting...")
@@ -43,7 +44,7 @@ def main(argv):
         viral_tr_pred.append(np.mean(transformer.predict(viral_train[i*batch_size : (i+1)*batch_size]), axis=1))        
     viral_tr_pred = np.concatenate(np.array(viral_tr_pred))
 
-    rand_train = np.random.randint(1, 5, (5000, 150))
+    rand_train = np.random.randint(1, 5, (5000, read_len))
     rand_tr_pred = []
     for i in range(int(rand_train.shape[0]/batch_size)):
         rand_tr_pred.append(np.mean(transformer.predict(rand_train[i*batch_size : (i+1)*batch_size]), axis=1))
