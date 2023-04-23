@@ -21,6 +21,7 @@ train_rf:
   ck_name : 'ck1'
   transformer_model : 'embed128_heads16_h256_fd5_nl8'
   num_trees : 500
+  read_len : 150
 
 test_pipeline:
   datapath: 'data'
