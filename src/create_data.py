@@ -37,7 +37,7 @@ def main(argv):
 
     print("Tokenized reads...")
     tokens = "ACGTNM"
-    mapping = dict(zip(tokens, range(0,len(tokens)+1)))
+    mapping = dict(zip(tokens, range(1,len(tokens)+1)))
     print(mapping)
 
     X_tokenized = seqs2cat(X, mapping)
